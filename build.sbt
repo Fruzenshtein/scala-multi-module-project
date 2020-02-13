@@ -1,5 +1,3 @@
-githubOwner := "Fruzenshtein"
-githubRepository := "scala-multi-module-project"
 githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 githubActor := sys.env.get("GITHUB_ACTOR").getOrElse("Fruzenshtein")
 
@@ -12,6 +10,7 @@ lazy val util = project.in(file("util"))
   .settings(Common.settings)
 
 lazy val app = project.in(file("."))
+  .dependsOn(common, util)
+  .aggregate(common, util)
   .settings(name := "multi-module-lib")
   .settings(Common.settings)
-  .dependsOn(common, util)

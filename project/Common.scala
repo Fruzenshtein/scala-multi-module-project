@@ -1,9 +1,12 @@
 import sbt._
 import Keys._
+import sbtghpackages.GitHubPackagesKeys._
 
 object Common {
 
   val settings: Seq[Def.Setting[_]] = Seq(
+    githubOwner := "Fruzenshtein",
+    githubRepository := "scala-multi-module-project",
     organization := "com.app",
     version := "0.1",
     scalaVersion := "2.12.8",
