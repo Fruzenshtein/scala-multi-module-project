@@ -1,2 +1,15 @@
-*.class
-*.log
+.idea/
+common/target/
+emailing/target/
+money/target/
+security/target/
+access-token/target/
+postgres/target/
+project/project/
+project/target/
+target/
+
+.ensime
+.ensime_cache
+/comments/comments.iml
+/.gitignore
